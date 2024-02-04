@@ -6,3 +6,7 @@ INSERT INTO books (title , pages) VALUES('my life in words', 634);
 
 SELECT title, released_year FROM books
 WHERE released_year = (SELECT MIN(released_year)FROM books);
+
+--Grouping by multiple colmuns
+
+SELECT author_lname, COUNT(*) FROM books GROUP BY author_lname;
