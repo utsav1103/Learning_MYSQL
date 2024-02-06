@@ -11,3 +11,14 @@ CREATE Table people(
 DESC people;
 INSERT INTO people(name, birthdate,birthtime,birthdt) VALUES('Elton','2000-12-25','11:00:00','2000-12-25 11:00:00');
 SELECT * FROM people;
+
+-- CURDATE , CURTIME & NOW
+
+SELECT CURTIME();
+
+SELECT CURTIME();
+SELECT CURDATE();
+SELECT NOW();
+INSERT INTO people(name, birthdate, birthtime, birthdt)
+VALUES('Hazel',CURDATE(), CURTIME(), NOW());
+SELECT * FROM people;
