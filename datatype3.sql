@@ -30,3 +30,9 @@ SELECT birthdate, day(birthdate), DAYOFWEEK(birthdate) FROM people;
 SELECT birthdate, day(birthdate), DAYOFWEEK(birthdate), DAYOFYEAR(birthdate) FROM people;
 SELECT birthdate, MONTHNAME(birthdate) FROM people; 
 SELECT name , birthdt, YEAR(birthdt), MONTHNAME(birthdt)  FROM people;
+
+
+-- more on TIME FUNCTION
+ SELECT name, birthtime, HOUR(birthtime) FROM people;
+ SELECT name, birthtime, SECOND(birthtime) FROM people;
+ SELECT birthdt, HOUR(birthdt) FROM people;
