@@ -22,3 +22,11 @@ SELECT NOW();
 INSERT INTO people(name, birthdate, birthtime, birthdt)
 VALUES('Hazel',CURDATE(), CURTIME(), NOW());
 SELECT * FROM people;
+SELECT birthdate FROM people;
+-- more on date FUNCTION
+
+SELECT birthdate, DAY(birthdate) FROM people;
+SELECT birthdate, day(birthdate), DAYOFWEEK(birthdate) FROM people; 
+SELECT birthdate, day(birthdate), DAYOFWEEK(birthdate), DAYOFYEAR(birthdate) FROM people;
+SELECT birthdate, MONTHNAME(birthdate) FROM people; 
+SELECT name , birthdt, YEAR(birthdt), MONTHNAME(birthdt)  FROM people;
