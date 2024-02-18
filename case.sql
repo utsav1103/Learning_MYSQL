@@ -28,3 +28,5 @@ SELECT
         else '*****'
     END
     FROM books;
+    SELECT * FROM books WHERE title is NULL;
+    DELETE FROM books WHERE title IS NULL;
