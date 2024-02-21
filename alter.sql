@@ -11,3 +11,9 @@ ADD COLUMN phone VARCHAR(15);
 ALTER TABLE companies
 ADD COLUMN employee_count INT NOT NULL;
 SELECT * FROM companies;
+-- droping COLUMN
+
+ALTER Table companies
+DROP COLUMN phone;
+
+ALTER Table companies DROP COLUMN employee_count;
