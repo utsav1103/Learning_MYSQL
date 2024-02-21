@@ -17,3 +17,21 @@ ALTER Table companies
 DROP COLUMN phone;
 
 ALTER Table companies DROP COLUMN employee_count;
+
+-- ALTER TABLE Renaming
+
+  SHOW TABLES;
+
+ RENAME TABLE companies TO suppliers;
+
+ SELECT * FROM companies;
+
+ SELECT * FROM suppliers;
+
+ ALTER TABLE suppliers RENAME to companies;
+
+ SHOW TABLES;
+
+ ALTER Table companies RENAME COLUMN name TO company_name;
+ 
+ 
