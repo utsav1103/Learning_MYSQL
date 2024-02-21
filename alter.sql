@@ -34,4 +34,13 @@ ALTER Table companies DROP COLUMN employee_count;
 
  ALTER Table companies RENAME COLUMN name TO company_name;
  
+ -- modifiying COLUMN USING ALTER TABLE
+
+ DESC companies;
+
+ ALTER Table companies MODIFY company_name VARCHAR(100) DEFAULT 'unknown';
+
+ INSERT INTO companies (address) VALUES ('3234 rose lane');
+
+ SELECT * FROM companies;
  
