@@ -72,3 +72,10 @@ INSERT INTO reviews(series_id, reviewer_id, rating) VALUES
     SELECT * FROM reviews;
 
     SELECT * FROM series;
+
+
+    -- TV SERIES CHALLENGE
+
+    SELECT title, rating FROM series
+    JOIN reviews ON series.id =
+     reviews.series_id;
