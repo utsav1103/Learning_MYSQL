@@ -139,17 +139,35 @@ ORDER BY
 
 SELECT
    first_name,
-   last_name ,
+   last_name,
    rating
 FROM
    reviewers
    JOIN reviews ON reviews.reviewer_id = reviewers.id;
 
+-- series without reviews
+SELECT
+   title as unreviewed_series
+FROM
+   series
+   LEFT JOIN reviews ON series.id = reviews.series_id
+WHERE
+   rating IS NULL;
 
-   -- series without reviews
+SELECT
+   title as unreviewed_series
+FROM
+   reviews
+   RIGHT JOIN series ON series.id = reviews.series_id
+WHERE
+   rating IS NULL;
 
-   SELECT title as unreviewed_series FROM series LEFT JOIN reviews ON series.id = reviews.series_id
-   WHERE rating IS NULL;
-
-    SELECT title as unreviewed_series FROM reviews RIGHT JOIN series ON series.id = reviews.series_id
-   WHERE rating IS NULL;
+-- GROUP BY genre with average rating 
+SELECT
+   genre,
+  ROUND(AVG(rating),2) as average_rating
+FROM
+   series
+   JOIN reviews on series.id = reviews.series_id
+GROUP BY
+   genre;
