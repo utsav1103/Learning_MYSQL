@@ -165,9 +165,25 @@ WHERE
 -- GROUP BY genre with average rating 
 SELECT
    genre,
-  ROUND(AVG(rating),2) as average_rating
+   ROUND(AVG(rating), 2) as average_rating
 FROM
    series
    JOIN reviews on series.id = reviews.series_id
 GROUP BY
    genre;
+
+-- joining information about reviews and reviewers
+SELECT
+   first_name,
+   last_name,
+   COUNT(rating) as count,
+  IFNULL (MIN(rating), 0) as min_rating,
+  IFNULL (MAX(rating), 0) as max_rating ,
+  IFNULL (AVG(rating), 0) AS average,
+  IF(COUNT(rating)>0 ,'ACTIVE', 'INACTIVE') as status
+FROM
+   reviewers
+   LEFT JOIN reviews ON reviewers.id = reviews.reviewer_id
+GROUP BY
+   first_name,
+   last_name;
