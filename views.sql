@@ -55,3 +55,26 @@ ORDER BY
     INSERT INTO orderes_series (title, released_year, genre) VALUES ('The Great', 2020, 'Comedy');
 
     DELETE FROM orderes_series WHERE title ='The Great';
+
+    -- REPLACE ALTERING VIEWS
+
+    SELECT * FROM orderes_series;
+
+    --cannot CREATE with same identity
+
+    CREATE VIEW orderes_series as SELECT * FROM series ORDER BY released_year DESC;
+
+    -- we can DO
+
+    CREATE OR REPLACE VIEW orderes_series as SELECT * FROM series ORDER BY released_year DESC;
+
+    
+SELECT * FROM orderes_series;
+
+-- we can also do 
+
+    ALTER VIEW orderes_series as SELECT * FROM series ORDER BY released_year ;
+
+    SELECT * FROM orderes_series;
+
+    DROP VIEW orderes_series;
