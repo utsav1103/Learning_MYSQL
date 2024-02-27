@@ -24,5 +24,34 @@ FROM
     JOIN series ON series.id = reviews.series_id
     JOIN reviewers ON reviewers.id = reviews.reviewer_id;
 
-    SHOW tables;
-    SELECT * FROM full_reviews;
+SHOW tables;
+
+SELECT
+    *
+FROM
+    full_reviews;
+
+-- UPDATEABLE VIEWS   
+SELECT
+    *
+FROM
+    full_reviews;
+
+DELETE FROM
+    full_reviews
+WHERE
+    released_year = 2010;
+
+CREATE VIEW orderes_series as
+SELECT
+    *
+FROM
+    series
+ORDER BY
+    released_year;
+
+    SELECT * FROM orderes_series;
+
+    INSERT INTO orderes_series (title, released_year, genre) VALUES ('The Great', 2020, 'Comedy');
+
+    DELETE FROM orderes_series WHERE title ='The Great';
