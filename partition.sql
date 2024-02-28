@@ -14,11 +14,27 @@ SELECT
     COUNT(*) OVER(PARTITION BY department) as dept_count
 FROM
     employees;
-    SELECT
+
+SELECT
     emp_no,
     department,
     salary,
     SUM(salary) OVER(PARTITION BY department) as dept_payroll,
     SUM(salary) OVER() as total_payroll
+FROM
+    employees;
+
+-- now USING ORDER BY in window FUNCTION
+
+SELECT
+    emp_no,
+    department,
+    salary,
+    SUM(salary) OVER(
+        PARTITION BY department
+        ORDER BY
+            salary DESC
+    ) as rolling_dept_salary,
+    SUM(salary) OVER(PARTITION BY department) as total_dept_salary
 FROM
     employees;
