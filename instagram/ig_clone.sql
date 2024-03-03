@@ -73,3 +73,16 @@ CREATE Table likes(
     PRIMARY KEY(user_id, photo_id)
 );
 
+-- FOLLOWERS SCHEMA
+
+CREATE TABLE followes (
+    follower_id INTEGER NOT NULL,
+    followee_id INTEGER NOT NULL,
+    created_at TIMESTAMP DEFAULT now(),
+    Foreign Key (follower_id) REFERENCES users(id),
+    Foreign Key (followee_id) REFERENCES users(id),
+    PRIMARY KEY (follower_id, followee_id)
+);
+
+DESC followes; 
+
