@@ -48,3 +48,9 @@ ORDER BY
     total DESC
 LIMIT
     1;
+
+    -- Instagram CHALLENGE #5 calculate avg number of photos per USER
+
+   SELECT (SELECT COUNT(*) FROM photos)/
+    (SELECT COUNT(*) FROM users);
+
