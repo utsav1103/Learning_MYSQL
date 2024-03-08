@@ -54,3 +54,10 @@ LIMIT
    SELECT (SELECT COUNT(*) FROM photos)/
     (SELECT COUNT(*) FROM users);
 
+
+    -- Instagram challenge #6 Five most popular hashtags
+
+
+   
+    SELECT tags.tag_name, COUNT(*) as total FROM photo_tags JOIN tags ON photo_tags.tag_id = tags.id GROUP BY tags.id ORDER BY total DESC LIMIT 5;
+    
