@@ -60,4 +60,10 @@ LIMIT
 
    
     SELECT tags.tag_name, COUNT(*) as total FROM photo_tags JOIN tags ON photo_tags.tag_id = tags.id GROUP BY tags.id ORDER BY total DESC LIMIT 5;
+
+
+    -- Instagram CHALLENGE #7 finding bots 
+
+
+    SELECT username,COUNT(*) as num_likes FROM users INNER JOIN likes ON users.id = likes.user_id GROUP BY likes.user_id HAVING num_likes = (SELECT COUNT(*) FROM photos);
     
